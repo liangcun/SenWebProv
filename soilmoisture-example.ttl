@@ -1,0 +1,85 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
+@prefix unit: <http://qudt.org/1.1/vocab/unit#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa#> .
+@prefix ssn: <http://www.w3.org/ns/ssn#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://localhost:8099/lod/SMSensor_5TM_S0501>
+  rdf:type sosa:Sensor ;
+  rdfs:subClassOf  <http://localhost:8099/lod/CTP-SMTMN>;
+  rdfs:label "The soil moisture sensor mounted on the S01 platform with the ID S0501."^^xsd:string ;
+  sosa:isHostedBy <http://localhost:8099/lod/SMPlatform_S01> ;
+  sosa:observes <http://localhost:8099/lod/Property_Near-Surface_Soil_Moisture> ;
+  ssn:implements <http://localhost:8099/lod/NSSM_Procedure> ;
+.
+
+<http://localhost:8099/lod/SMPlatform_S01>
+  rdf:type sosa:Platform ;
+  rdfs:label "Platform at Station S01, which hosts four sensors at four soil depths (0~5, 10, 20, and 40 cm)."^^xsd:string ;
+  sosa:hosts <http://localhost:8099/lod/SMSensor_5TM_S0501> ;
+.
+
+<http://localhost:8099/lod/SMStation_S01>
+  rdf:type sosa:FeatureOfInterest ;
+  rdfs:label "Soil moisture obervation point S01 in the small-scale network of CTP-SMTMN."^^xsd:string ;
+  ssn:hasProperty <http://localhost:8099/lod/Property_Near-Surface_Soil_Moisture>;
+.
+
+<http://localhost:8099/lod/CTP-SMTMN>
+  rdf:type ssn:System ;
+  ssn:implements <http://localhost:8099/lod/NSSM_Procedure> ;
+  rdfs:label "A dense monitoring network is established on the central Tibetan Plateau to measure two state variables (soil moisture and temperature) at three spatial scales (1.0, 0.3, 0.1 degree) and four soil depths (0~5, 10, 20, and 40 cm). The network consists of 56 stations. "^^xsd:string ;
+.
+
+<http://localhost:8099/lod/Property_Near-Surface_Soil_Moisture>
+  rdf:type sosa:ObservableProperty ;
+  rdfs:label "Soil moisture 0~5 cm depth. "^^xsd:string ;
+.
+
+<http://localhost:8099/lod/NSSM_Procedure>
+  rdf:type sosa:Procedure ;
+  ssn:implementedBy <http://localhost:8099/lod/CTP-SMTMN>;
+  rdfs:comment "This is a procedure for measuring near-surface soil moisture. Sensors measure soil moisture at 0~5 cm depth. "^^xsd:string ;
+.
+
+<http://localhost:8099/lod/SMObs_S01_20110704160000>
+  rdf:type sosa:Observation ;
+  sosa:madeBySensor <http://localhost:8099/lod/SMSensor_5TM_S0501> ;
+  sosa:hasFeatureOfInterest <http://localhost:8099/lod/SMStation_S01> ;
+  sosa:observedProperty <http://localhost:8099/lod/Property_Near-Surface_Soil_Moisture> ;
+  sosa:hasResult <http://localhost:8099/lod/SMObsResult_S01_20110704160000> ;
+  sosa:resultTime "2011-07-04T16:00:00"^^xsd:dateTime ;
+  sosa:usedProcedure <http://localhost:8099/lod/NSSM_Procedure> ;
+  rdfs:label "A soil moisture observation at Station S01, measuring near-surface (0~5cm) soil moisure."^^xsd:string ;
+.
+
+<http://localhost:8099/lod/SMObsResult_S01_20110704160000>
+  rdf:type sosa:Result , qudt:QuantityValue ;
+  rdfs:label "Result of soil moisture observation SMObs_S01_20110704160000."^^xsd:string ;
+  qudt:numericValue "39.20"^^xsd:double ;
+  qudt:unit unit:Percentage ;
+  qudt:symbol "% vol"^^xsd:string ;
+.
+
+<http://localhost:8099/lod/SMObs_S01_20111231150000>
+  rdf:type sosa:Observation ;
+  sosa:madeBySensor <http://localhost:8099/lod/SMSensor_5TM_S0501> ;
+  sosa:hasFeatureOfInterest <http://localhost:8099/lod/SMStation_S01> ;
+  sosa:observedProperty <http://localhost:8099/lod/Property_Near-Surface_Soil_Moisture> ;
+  sosa:hasResult <http://localhost:8099/lod/SMObsResult_S01_20111231150000> ;
+  sosa:resultTime "2011-12-31T15:00:00"^^xsd:dateTime ;
+  sosa:usedProcedure <http://localhost:8099/lod/NSSM_Procedure> ;
+  rdfs:label "A soil moisture observation at Station S01, measuring near-surface (0~5cm) soil moisure."^^xsd:string ;
+.
+
+<http://localhost:8099/lod/SMObsResult_S01_20111231150000>
+  rdf:type sosa:Result , qudt:QuantityValue ;
+  rdfs:label "Result of soil moisture observation SMObs_S01_20111231150000."^^xsd:string ;
+  qudt:numericValue "14.50"^^xsd:double ;
+  qudt:unit unit:Percentage ;
+  qudt:symbol "% vol"^^xsd:string ;
+.
+
