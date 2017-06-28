@@ -12,7 +12,8 @@
   prov-sw:implements <http://localhost:8099/lod/NSSM_Procedure> ;
   prov:wasAttributedTo <http://localhost:8099/lod/Agent_itpcas> ;
 .
-<http://localhost:8099/lod/Deploy_110704>
+
+<http://localhost:8099/lod/Deploy_110704>
   rdf:type prov-sw:Deploy ;
   prov:used <http://localhost:8099/lod/SMSensor_5TM_S0501> ;
   prov:used <http://localhost:8099/lod/SMPlatform_S01> ;
@@ -20,6 +21,7 @@
   prov:wasAssociatedWith <http://localhost:8099/lod/Agent_itpcas>;
   prov:endedAtTime "2011-07-04T16:00:00"^^xsd:dateTime ;
 .
+
 
 <http://localhost:8099/lod/Deployment_110704>
   rdf:type prov-sw:Deployment ;
