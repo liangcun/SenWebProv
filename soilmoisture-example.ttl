@@ -1,4 +1,3 @@
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix qudt: <http://qudt.org/1.1/schema/qudt#> .
 @prefix unit: <http://qudt.org/1.1/vocab/unit#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -42,7 +41,7 @@
 <http://localhost:8099/lod/NSSM_Procedure>
   rdf:type sosa:Procedure ;
   ssn:implementedBy <http://localhost:8099/lod/CTP-SMTMN>;
-  rdfs:comment "This is a procedure for measuring near-surface soil moisture. Sensors measure soil moisture at 0~5 cm depth. "^^xsd:string ;
+  rdfs:comment "This is a procedure for measuring near-surface soil moisture. The sensor is obliquely inserted into 0~5 cm topsoil to measure the averaged near-surface soil. "^^xsd:string ;
 .
 
 <http://localhost:8099/lod/SMObs_S01_20110704160000>

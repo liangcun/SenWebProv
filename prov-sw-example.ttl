@@ -1,0 +1,70 @@
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>. 
+@prefix prov: <http://www.w3.org/ns/prov#>. 
+@prefix prov-sw: <http://geos.whu.edu.cn/ont/prov-sw.owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://localhost:8099/lod/SMSensor_5TM_S0501>
+  rdf:type prov-sw:Sensor ;
+  prov-sw:hasDeployment <http://localhost:8099/lod/Deployment_110704> ;
+  prov-sw:isHostedBy <http://localhost:8099/lod/SMPlatform_S01> ;
+  prov-sw:implements <http://localhost:8099/lod/NSSM_Procedure> ;
+  prov:wasAttributedTo <http://localhost:8099/lod/Agent_itpcas> ;
+.
+<http://localhost:8099/lod/Deploy_110704>
+  rdf:type prov-sw:Deploy ;
+  prov:used <http://localhost:8099/lod/SMSensor_5TM_S0501> ;
+  prov:used <http://localhost:8099/lod/SMPlatform_S01> ;
+  prov:qualifiedUsage <http://localhost:8099/lod/Deployment_110704> ;
+  prov:wasAssociatedWith <http://localhost:8099/lod/Agent_itpcas>;
+  prov:endedAtTime "2011-07-04T16:00:00"^^xsd:dateTime ;
+.
+
+<http://localhost:8099/lod/Deployment_110704>
+  rdf:type prov-sw:Deployment ;
+  prov-sw:deployedOnPlatform <http://localhost:8099/lod/SMPlatform_S01> ;
+  prov-sw:deployedSystem <http://localhost:8099/lod/CTP-SMTMN> ;
+.
+
+<http://localhost:8099/lod/Agent_itpcas>
+  rdf:type prov:Agent ;
+  rdfs:label "Institute of Tibetan Plateau Research, Chinese Academy of Sciences."^^xsd:string ;
+.
+
+<http://localhost:8099/lod/CTP-SMTMN>
+  rdf:type prov-sw:System ;
+  prov-sw:implements <http://localhost:8099/lod/NSSM_Procedure> ;
+  prov:hadMember <http://localhost:8099/lod/SMSensor_5TM_S0501> ;
+.
+
+<http://localhost:8099/lod/SMStation_S01>
+  rdf:type prov-sw:Feature ;
+  prov:atLocation [
+    a geo:Point ;
+    geo:lat "31.732"^^xsd:string ;
+    geo:long "91.766"^^xsd:string ;
+    geo:alt "4758"^^xsd:string ;
+  ];
+.
+
+<http://localhost:8099/lod/SMObs_S01_20110704160000>
+  rdf:type prov-sw:Observation ;
+  prov:wasAssociatedWith <http://localhost:8099/lod/SMSensor_5TM_S0501> ;
+  prov-sw:hasFeatureOfInterest <http://localhost:8099/lod/SMStation_S01> ;
+  prov-sw:observedProperty <http://localhost:8099/lod/Property_Near-Surface_Soil_Moisture> ;
+  prov:generated <http://localhost:8099/lod/SMObsResult_S01_20110704160000> ;
+  prov-sw:resultTime "2011-07-04T16:00:00"^^xsd:dateTime ;
+  prov-sw:usedProcedure <http://localhost:8099/lod/NSSM_Procedure> ;
+.
+
+<http://localhost:8099/lod/SMObs_S01_20111231150000>
+  rdf:type prov-sw:Observation ;
+  prov:wasAssociatedWith <http://localhost:8099/lod/SMSensor_5TM_S0501> ;
+  prov-sw:hasFeatureOfInterest <http://localhost:8099/lod/SMStation_S01> ;
+  prov-sw:observedProperty <http://localhost:8099/lod/Property_Near-Surface_Soil_Moisture> ;
+  prov:generated <http://localhost:8099/lod/SMObsResult_S01_20111231150000> ;
+  prov-sw:resultTime "2011-12-31T15:00:00"^^xsd:dateTime ;
+  prov-sw:usedProcedure <http://localhost:8099/lod/NSSM_Procedure> ;
+.
+
