@@ -228,9 +228,9 @@
     
 
 
-    <!-- http://geos.whu.edu.cn/ont/prov-sw#Obervation -->
+    <!-- http://geos.whu.edu.cn/ont/prov-sw#Observation -->
 
-    <owl:Class rdf:about="http://geos.whu.edu.cn/ont/prov-sw#Obervation">
+    <owl:Class rdf:about="http://geos.whu.edu.cn/ont/prov-sw#Observation">
         <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <owl:equivalentClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Observation"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
