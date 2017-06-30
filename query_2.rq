@@ -1,0 +1,12 @@
+PREFIX : <http://localhost:8099/lod/> 
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX prov-sw: <http://geos.whu.edu.cn/ont/prov-sw.owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?sensor ?deploymentDate 
+WHERE {
+     ?sensor a prov-sw:Sensor .
+     ?deployActivity prov:used  ?sensor .
+     ?deployActivity  prov:endedAtTime ?deployTime .
+     FILTER(?deployTime >= "2010-06-01T00:00:00" ^^xsd:dateTime) .
+}

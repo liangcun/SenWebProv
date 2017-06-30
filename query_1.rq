@@ -1,0 +1,17 @@
+PREFIX : <http://localhost:8099/lod/> 
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX prov-sw: <http://geos.whu.edu.cn/ont/prov-sw.owl#>
+
+SELECT  ?obsResult ?resultTime ?latitude ?longitude ?sensor ?procedure ?property
+WHERE {
+    :SMObs_S01_20111231150000 prov:generated ?obsResult .
+    :SMObs_S01_20111231150000 prov-sw:resultTime ?resultTime .
+    :SMObs_S01_20111231150000 prov-sw:hasFeatureOfInterest ?f .
+    ?f prov:atLocation ?location .
+    ?location geo:lat ?latitude .
+    ?location geo:long  ?longitude .
+    :SMObs_S01_20111231150000 prov:wasAssociatedWith ?sensor .
+    :SMObs_S01_20111231150000 prov-sw:usedProcedure ?procedure .
+    :SMObs_S01_20111231150000 prov-sw:observedProperty ?property.
+}
