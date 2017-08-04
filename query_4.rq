@@ -1,0 +1,9 @@
+PREFIX : <http://localhost:8099/lod/> 
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?agent ?name 
+WHERE {
+     ?agent a prov:Agent .
+     ?agent rdfs:lable ?name .
+}
