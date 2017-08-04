@@ -3,7 +3,7 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX prov-sw: <http://geos.whu.edu.cn/ont/prov-sw.owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?sensor ?deploymentDate 
+SELECT ?sensor ?deployTime 
 WHERE {
      ?sensor a prov-sw:Sensor .
      ?deployActivity prov:used  ?sensor .
